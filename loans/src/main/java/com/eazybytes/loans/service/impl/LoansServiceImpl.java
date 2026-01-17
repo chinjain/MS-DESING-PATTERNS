@@ -8,17 +8,19 @@ import com.eazybytes.loans.exception.ResourceNotFoundException;
 import com.eazybytes.loans.mapper.LoansMapper;
 import com.eazybytes.loans.repository.LoansRepository;
 import com.eazybytes.loans.service.ILoansService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Random;
 
 @Service
-@AllArgsConstructor
 public class LoansServiceImpl implements ILoansService {
 
     private LoansRepository loansRepository;
+
+    public LoansServiceImpl(LoansRepository loansRepository) {
+        this.loansRepository = loansRepository;
+    }
 
     /**
      * @param mobileNumber - Mobile Number of the Customer

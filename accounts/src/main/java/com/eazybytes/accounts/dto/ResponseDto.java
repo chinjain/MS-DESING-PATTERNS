@@ -1,9 +1,10 @@
 package com.eazybytes.accounts.dto;
 
-public class ResponseDto {
+public class ResponseDto<T> {
 
     private String statusCode;
     private String statusMsg;
+    private T data;
 
     public ResponseDto() {}
 
@@ -17,4 +18,11 @@ public class ResponseDto {
     
     public String getStatusMsg() { return statusMsg; }
     public void setStatusMsg(String statusMsg) { this.statusMsg = statusMsg; }
+
+    public T getData() {
+        return data;
+    }
+    public void setData(T data) {
+        this.data = data;
+    }
 }

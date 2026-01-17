@@ -42,13 +42,6 @@
 			<scope>runtime</scope>
 			<version>${h2.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-			<version>${lombok.version}</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
