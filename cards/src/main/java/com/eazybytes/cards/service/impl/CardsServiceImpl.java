@@ -18,6 +18,10 @@ public class CardsServiceImpl implements ICardsService {
 
     private CardsRepository cardsRepository;
 
+    public CardsServiceImpl(CardsRepository cardsRepository) {
+        this.cardsRepository = cardsRepository;
+    }
+
     /**
      * @param mobileNumber - Mobile Number of the Customer
      */

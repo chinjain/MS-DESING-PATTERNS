@@ -13,3 +13,10 @@ CREATE TABLE IF NOT EXISTS `cards` (
   `updated_by` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`card_id`)
 );
+
+INSERT INTO `cards` (`mobile_number`, `card_number`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `active_sw`, `created_at`, `created_by`) VALUES
+('9876543210', '4532123456789012', 'Credit Card', 50000, 15000, 35000, 1, CURDATE(), 'system'),
+('9876543211', '4532123456789013', 'Debit Card', 25000, 5000, 20000, 1, CURDATE(), 'system'),
+('9876543212', '4532123456789014', 'Credit Card', 75000, 25000, 50000, 1, CURDATE(), 'system'),
+('9876543213', '4532123456789015', 'Debit Card', 30000, 8000, 22000, 1, CURDATE(), 'system'),
+('9876543214', '4532123456789016', 'Credit Card', 100000, 40000, 60000, 1, CURDATE(), 'system');

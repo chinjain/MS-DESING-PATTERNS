@@ -10,6 +10,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 @Component
 public class CustomerCompositeHandler {
 
@@ -31,7 +33,7 @@ public class CustomerCompositeHandler {
                 .flatMap(tuple -> {
                     CustomerDto customerDto = tuple.getT1().getBody();
                     AccountsDto accountsDto = tuple.getT2().getBody();
-                    LoansDto loansDto = tuple.getT3().getBody();
+                    LoansDto loansDto = tuple.getT3().getBody() != null ? tuple.getT3().getBody() : null;
                     CardsDto cardsDto = tuple.getT4().getBody();
                     CustomerSummaryDto customerSummaryDto = new CustomerSummaryDto(customerDto, accountsDto, loansDto, cardsDto);
                     return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
